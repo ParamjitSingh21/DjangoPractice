@@ -1,0 +1,27 @@
+  <header id="header">	
+    <div class="inner">	
+        <a href="#" class="logo">PSs</a>	
+        <span class="navbar">     
+            {% if request.user.is_authenticated %}
+            <a class="active">Welcome, "{{ user.username }}"</a>
+                <a href="{% url 'accounts:logout' %}">
+                  <strong>Logout</strong></a>
+              </nav>
+                {% else %}
+                <nav id="nav">
+                  <div class="dropdown">
+                    <button class="dropbtn">	
+                      <i class="fas fa-users"></i>	
+                    </button>
+                    <div class="dropdown-content">	
+                      <a href="{% url 'accounts:signup' %}"><strong>Signup</strong></a></br>
+                      <a href="{% url 'accounts:login' %}">Log in</a>
+                    </div>      
+                  </div>
+                  <a href="#">About us</a>
+                </nav>
+            {% endif %}
+        </span>
+    </div>
+  </header>
+      <!-- Header -->		
