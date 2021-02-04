@@ -1,24 +1,27 @@
-  <header id="header">	
+  <header id="header">
+    {% load static %}	
     <div class="inner">	
-        <a href="#" class="logo">PSs</a>	
+        <a href="#" class="logo">EASEManagement</a>	
         <span class="navbar">     
             {% if request.user.is_authenticated %}
-            <a class="active">Welcome, "{{ user.username }}"</a>
-                <a href="{% url 'accounts:logout' %}">
-                  <strong>Logout</strong></a>
-              </nav>
+            <!-- <nav id="nav"> -->
+                <a class="">Welcome, "{{ user.username }}"</a>
+                    <a href="{% url 'accounts:logout' %}">
+                    <span class="avatar"><img src="{% static '/images/female.png'%}" alt=""></span></a>
+            </nav>
                 {% else %}
                 <nav id="nav">
                   <div class="dropdown">
-                    <button class="dropbtn">	
-                      <i class="fas fa-users"></i>	
-                    </button>
+                      <span class="avatar"><img src="{% static '/images/login.png'%}" alt=""></span>	
                     <div class="dropdown-content">	
                       <a href="{% url 'accounts:signup' %}"><strong>Signup</strong></a></br>
                       <a href="{% url 'accounts:login' %}">Log in</a>
                     </div>      
                   </div>
-                  <a href="#">About us</a>
+                  <span class='about'>
+                    <a href="#">About us</a>
+                  </span>
+                  <!-- <a href="{% url 'about' %}">About us</a> -->
                 </nav>
             {% endif %}
         </span>

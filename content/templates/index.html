@@ -2,14 +2,20 @@
 
 
 {% block content %}
+{% load static %}	
 
     {% if request.user.is_authenticated %}
-
         <b>{{ request.user.username }}</b>.
+        <div class="fill">
+            <span><img src="{% static '/images/loginHome.png'%}" alt=""></span>
+        </div>
 
     {% else %}
 
-        <b>trans 'You are a guest.</b>
+        <b>You are a guest.</b>
+        <div class="fill">
+            <span><img src="{% static '/images/guest.png'%}" alt=""></span>
+        </div>
 
     {% endif %}
 

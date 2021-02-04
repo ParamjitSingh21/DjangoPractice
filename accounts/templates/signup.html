@@ -1,72 +1,63 @@
 {% extends 'page.html' %}
-
+{% load static %}
 {% block content %}
-
-    <section class="hero is-dark is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-
+<div class="fill">
+  <span><img src="{% static '/images/signUp.png'%}" alt=""></span>
+    <div class="main signup">
+      <p class="sign" align="center">Create your account</p>
               <form method="POST" action="." class="box">
                 {% csrf_token %}
-
-                <h1 class="has-text-centered mb-5 is-size-3">Signup</h1>
-
-                <div class="field">
-                  <label for="" class="label">Username</label>
-                  <div class="control has-icons-left">
+                <div class='wrap-input100'>
+                  <div class="un icon">
                     {{ form.username }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-user"></i>
-                    </span>
-                  </div>
+                    <span class='symbol-input100'>
+                     <i class="fa fa-user fa-lg"></i>
+                   </span>
+                   </div>
+                   {{ form.errors.username }}
                 </div>
 
-                <div class="field">
-                  <label for="" class="label">Email</label>
-                  <div class="control has-icons-left">
+                <div class='wrap-input100'>
+                  <div class="un icon">
                     {{ form.email }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-envelope"></i>
-                    </span>
-                  </div>
+                    <span class='symbol-input100'>
+                     <i class="fa fa-envelope fa-lg"></i>
+                   </span>
+                   </div>
+                   {{ form.errors.email }}
                 </div>
                 
-                <div class="field">
-                  <label for="" class="label">Password</label>
-                  <div class="control has-icons-left">
+                <div class='wrap-input100'>
+                  <div class="un icon">
                     {{ form.password1 }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                  </div>
+                    <span class='symbol-input100'>
+                     <i class="fa fa-lock fa-lg"></i>
+                   </span>
+                   </div>
+                </div>
+
+                <div class='wrap-input100'>
+                  <div class="un icon">
+                    {{ form.password2 }}
+                    <span class='symbol-input100'>
+                     <i class="fa fa-lock fa-lg"></i>
+                   </span>
+                   </div>
+                   {{ form.errors.password2 }}
                 </div>
 
                 <div class="field">
-                  <label for="" class="label">Confirm password</label>
-                  <div class="control has-icons-left">
-                    {{ form.password2 }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                  </div>
-                </div>
-       
-                <div class="field">
-                  <button class="button is-success" type=submit>
+                  <button class="button is-success btn" type="submit">
                     Signup
                   </button>
                 </div>
-                <div class="field">
-                  Already registered ? <a href="{% url 'accounts:login' %}">Login</a> 
+                <div class ='separater'></div>
+                <div class="field" id ='logintext'>
+                  Already registered ? <a id='loginlink' href="{% url 'accounts:login' %}">Login</a> 
                 </div>
 
               </form>
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    </div>
     {% endblock %}

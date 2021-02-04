@@ -1,49 +1,51 @@
 {% extends 'page.html' %}
 
 {% block content %}
+{% load static %}
     <!--new form-->
-    <section class="hero is-dark is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-          
-            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-              <form method="POST" action="." class="box">
+    <div class="fill">
+      <span><img src="{% static '/images/guest.png'%}" alt=""></span>
+    <div class="main">
+      <p class="sign" align="center">Log-in to your account</p>
+              <form method="POST" action=".">
                 {% csrf_token %}
-
-                <h1 class="has-text-centered mb-5 is-size-3">Login</h1>
-
-                <div class="field">
-                  <label for="" class="label">Username</label>
-                  <div class="control has-icons-left">
+                <div class='wrap-input100'>
+                  <div class="un icon">
                     {{ form.username }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-user"></i>
-                    </span>
-                  </div>
+                    <span class='symbol-input100'>
+                     <i class="fa fa-user fa-lg"></i>
+                   </span>
+                   </div>
                 </div>
-
-                <div class="field">
-                  <label for="" class="label">Password</label>
-                  <div class="control has-icons-left">
+                  
+                
+                <!-- https://codepen.io/zFunx/pen/XRyqvx -->
+                <div class='wrap-input100'>
+                  <div class="un icon">
                     {{ form.password }}
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                  </div>
-                </div>  
-
+                    <span class='symbol-input100'>
+                     <i class="fa fa-lock fa-lg"></i>
+                   </span>
+                   </div>
+                   {{ form.errors.password }}
+                </div>                
                 <div class="field">
-                  <a href="#">Forgot password ?</a> 
-                </div>
-
-                <div class="field">
-                  <button class="button is-success" type="submit">
-                    Login
+                  <button class="button is-success btn" type="submit">
+                    Log In
+                    <i class="fas fa-sign-in-alt ml-2" aria-hidden="true"></i>
                   </button>
                 </div>
-                <div class="field">
-                  Need account ? <a href="{% url 'accounts:signup' %}">Signup</a> 
+                <div class ='separater'></div>
+                <div class="field com">
+                  <ul>
+                    <li>
+                      <a id='resetPassword' href="#">Can't login?</a> 
+                    </li>
+                    <li id='dot'>•</li>
+                    <li>
+                      <a id='signup' href="{% url 'accounts:signup' %}">Signup</a> 
+                    </li>
+                  </ul> 
                 </div>
               </form>
               
@@ -51,5 +53,6 @@
           </div>
         </div>
       </div>
+    </div>
     </section>
 {% endblock %}
