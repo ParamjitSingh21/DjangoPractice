@@ -6,7 +6,6 @@ from django.contrib.auth.forms import (UserCreationForm,
                                        SetPasswordForm
                                        )
 
-
 class UserLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(UserLoginForm, self).__init__(*args, **kwargs)

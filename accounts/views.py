@@ -28,3 +28,8 @@ def SignUp(request):
     }
 
     return render(request, 'signup.html', context)
+
+
+def resetPasswordConfirmation(request):
+    # An email has been sent with instruction to reset your password
+    pass

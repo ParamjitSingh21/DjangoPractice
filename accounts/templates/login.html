@@ -3,6 +3,7 @@
 {% block content %}
 {% load static %}
     <!--new form-->
+    <section>
     <div class="fill">
       <span><img src="{% static '/images/guest.png'%}" alt=""></span>
     <div class="main">
@@ -39,7 +40,7 @@
                 <div class="field com">
                   <ul>
                     <li>
-                      <a id='resetPassword' href="#">Can't login?</a> 
+                      <a id='resetPassword' href="{% url 'accounts:password-reset' %}">Can't login?</a> 
                     </li>
                     <li id='dot'>•</li>
                     <li>
