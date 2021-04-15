@@ -21,6 +21,7 @@ from accounts.views import frontpage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexPageView.as_view(), name='index'),
-     path('about',AboutPageView.as_view(), name='about'),
+    path('home', IndexPageView.as_view(), name='home'),
+    path('about',AboutPageView.as_view(), name='about'),
     path('',include('accounts.urls')),
 ]
