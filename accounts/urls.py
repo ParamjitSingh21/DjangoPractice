@@ -6,7 +6,7 @@ from .forms import UserLoginForm, ResetPasswordForm, NewPasswordForm
 app_name = 'accounts'
 
 urlpatterns = [
-    # path('login/',LogIn, name='login'),
+    
     path('signup/',SignUp, name='signup'),
     path('', frontpage, name="frontpage"),
     path('login/', views.LoginView.as_view(template_name="login.html", authentication_form=UserLoginForm), name="login"),

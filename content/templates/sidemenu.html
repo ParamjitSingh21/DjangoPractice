@@ -1,8 +1,10 @@
 {% block sidebar %}
     <!-- Sidebar --> 
     <nav id="sidebar" class="active">
-    <a href="/">Home</a>
-    <a href="{% url 'accounts:login' %}">Login</a>
-    <a href="{% url 'accounts:signup' %}">Sign Up</a>
+        <div class="">
+            <a href="/" class="side-bar-icon"><i class="fa fa-home"></i></a>
+            <a href="{% url 'accounts:login' %}" class="side-bar-icon"><i class="fa fa-search"></i></a> 
+            <a href="{% url 'accounts:signup' %}" class="side-bar-icon"><i class="fa fa-envelope"></i></a>
+          </div>
     </nav>     
 {% endblock %}

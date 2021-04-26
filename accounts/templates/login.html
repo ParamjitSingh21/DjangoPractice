@@ -7,8 +7,8 @@
   <div class="fill">
     <span><img src="{% static '/images/guest.png'%}" alt=""></span>
     <div class="main">
-      <p class="sign" align="center">Log-in to your account</p>
       <form method="POST" action=".">
+        <p class="sign" align="center">Log-in to your account</p>
         {% csrf_token %}
         <div class='wrap-input100'>
           <div class="un icon">
@@ -27,8 +27,8 @@
           </div>
           {{ form.errors.password }}
         </div>
-        <div class="field">
-          <button class="button is-success btn" type="submit">
+        <div class="field" align="center">
+          <button class="button is-success btn"  type="submit">
             Log In
             <i class="fas fa-sign-in-alt ml-2" aria-hidden="true"></i>
           </button>
